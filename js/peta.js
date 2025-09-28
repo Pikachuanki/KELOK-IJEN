@@ -14,7 +14,14 @@ var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 );
 
 // Style
-function stylePersil(f) { return { color: "#0000FF", weight: 2, fillColor: "#0000FF", fillOpacity: 0.3 }; }
+function stylePersil(f) { 
+  return { 
+    color: "#FFA500",       // garis tepi
+    weight: 2, 
+    fillColor: "#FFA500",   // isi polygon
+    fillOpacity: 0.5        // bisa kamu sesuaikan
+  }; 
+}
 function styleKRB(f) { return { color: "#FF0000", weight: 2, fillColor: "#FF0000", fillOpacity: 0.3 }; }
 function styleJalur(f) { return { color: "#FFA500", weight: 3, dashArray: "5,5" }; }
 function styleTempat(f) { return { color: "#008000", weight: 2, fillColor: "#00FF00", fillOpacity: 0.6 }; }
@@ -71,12 +78,11 @@ var jalurLayer = L.geoJSON(null, { style: styleJalur, onEachFeature: (f, l) => l
 var tempatLayer = L.geoJSON(null, { style: styleTempat, onEachFeature: (f, l) => l.bindPopup(popupEvakuasi(f.properties)) });
 
 // Load data
-fetch('../data/Persil_Desa.geojson').then(r => r.json()).then(d => { persilLayer.addData(d).addTo(map); });
+fetch('../data/Rumah_Terdampak.geojson').then(r => r.json()).then(d => { persilLayer.addData(d).addTo(map); });
 fetch('../data/KRB_Full.geojson').then(r => r.json()).then(d => { krbLayer.addData(d).addTo(map); });
 fetch('../data/J_Evakuasi_BWI.geojson').then(r => r.json()).then(d => { jalurLayer.addData(d); });
 fetch('../data/J_Evakuasi_BWS.geojson').then(r => r.json()).then(d => { jalurLayer.addData(d); });
-fetch('../data/T_Evakuasi_BWI.geojson').then(r => r.json()).then(d => { tempatLayer.addData(d); });
-fetch('../data/T_Evakuasi_BWS.geojson').then(r => r.json()).then(d => { tempatLayer.addData(d); });
+fetch('../data/Tempat_Evakuasi.geojson').then(r => r.json()).then(d => { tempatLayer.addData(d); });
 
 // Marker Kearifan Lokal (isi popup penuh dikembalikan)
 var kearifanLayer = L.layerGroup();
