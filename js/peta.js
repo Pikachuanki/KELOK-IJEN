@@ -80,45 +80,45 @@ var kearifanLayer = L.layerGroup();
 
 var marker1 = L.marker([-8.024141322546003, 114.18145476023389]).bindPopup(`
   <div style="text-align:center;">
-    <img class="popup-img" src="/Foto/1.jpg" alt="Sesajen">
+    <img class="popup-img" src="../img/1.jpg" alt="Sesajen">
     <h4 class="popup-title">Rokat Bumi Ijen</h4>
     <table class="popup-table">
       <tr><td class="popup-label">Desa</td><td>Kalianyar</td></tr>
       <tr><td class="popup-label">Dusun</td><td>Kebon Jeruk</td></tr>
-      <tr><td class="popup-label">Deskripsi</td><td>Rokat Bumi adalah ritual kebudayaan tahunan masyarakat Bondowoso dan menjadi agenda Ijen Caldera Fiesta...</td></tr>
+      <tr><td class="popup-label">Deskripsi</td><td>Rokat Bumi adalah ritual kebudayaan tahunan masyarakat Bondowoso dan menjadi agenda Ijen Caldera Fiesta sebagai bentuk penghormatan masyarakat terhadap bumi dan alam Gunung Ijen. Ritual ini dilakukan dengan doa bersama dan kegiatan kebersihan lingkungan sebagai simbol menjaga keseimbangan ekosistem.</td></tr>
     </table>
   </div>
 `);
 var marker2 = L.marker([-7.9884384010113365, 114.17333930005388]).bindPopup(`
   <div style="text-align:center;">
-    <img class="popup-img" src="/Foto/2.jpg" alt="Ritual Adat">
+    <img class="popup-img" src="../img/2.jpg" alt="Ritual Adat">
     <h4 class="popup-title">Rokat Dhisa</h4>
     <table class="popup-table">
       <tr><td class="popup-label">Desa</td><td>Kalianyar</td></tr>
       <tr><td class="popup-label">Dusun</td><td>Blawan</td></tr>
-      <tr><td class="popup-label">Deskripsi</td><td>Rokat Dhisa adalah ritual tahunan dalam tradisi masyarakat Madura...</td></tr>
+      <tr><td class="popup-label">Deskripsi</td><td>Rokat Dhisa adalah tradisi masyarakat di sekitar Ijen yang dilakukan sebagai ungkapan syukur atas hasil bumi dan keselamatan desa. Melalui doa bersama, selamatan, dan arak-arakan hasil panen, warga memohon berkah serta menjaga keharmonisan antara manusia dan alam.</td></tr>
     </table>
   </div>
 `);
 var marker3 = L.marker([-7.988535700674706, 114.17241499988876]).bindPopup(`
   <div style="text-align:center;">
-    <img class="popup-img" src="/Foto/3.jpg" alt="Ritual Adat">
+    <img class="popup-img" src="../img/3.jpg" alt="Ritual Adat">
     <h4 class="popup-title">Can Macanan</h4>
     <table class="popup-table">
       <tr><td class="popup-label">Desa</td><td>Kalianyar</td></tr>
       <tr><td class="popup-label">Dusun</td><td>Blawan</td></tr>
-      <tr><td class="popup-label">Deskripsi</td><td>Tradisi Can Macanan merupakan bentuk ekspresi rasa syukur masyarakat...</td></tr>
+      <tr><td class="popup-label">Deskripsi</td><td>Tradisi Can Macanan adalah kesenian tradisional berupa tarian barong yang menggambarkan simbol kekuatan dan penjaga desa dari marabahaya. Pertunjukan ini biasanya mengiringi upacara adat yang diiringi gamelan dan gerak tari yang dinamis. Selain sebagai hiburan, Can Macanan mencerminkan nilai spiritual, solidaritas masyarakat, dan pelestarian budaya lokal di kawasan Ijen.</td></tr>
     </table>
   </div>
 `);
 var marker4 = L.marker([-7.9927996004721775, 114.1929963000355]).bindPopup(`
   <div style="text-align:center;">
-    <img class="popup-img" src="/Foto/4.jpg" alt="Ritual Adat">
+    <img class="popup-img" src="../img/4.jpg" alt="Ritual Adat">
     <h4 class="popup-title">Rokat Molong Kopi</h4>
     <table class="popup-table">
       <tr><td class="popup-label">Desa</td><td>Kali Gedang</td></tr>
       <tr><td class="popup-label">Dusun</td><td>Kali Gedang</td></tr>
-      <tr><td class="popup-label">Deskripsi</td><td>Rokat Molong Kopi adalah sebuah tradisi ritual di Bondowoso, Jawa Timur...</td></tr>
+      <tr><td class="popup-label">Deskripsi</td><td>Rokat Molong Kopi adalah sebuah tradisi ritual di Bondowoso, Jawa Timur setelah panen kopi. Melalui prosesi doa dan persembahan hasil panen pertama, warga memohon perlindungan dan keberkahan agar tanaman kopi tetap subur dan membawa rezeki.</td></tr>
     </table>
   </div>
 `);
