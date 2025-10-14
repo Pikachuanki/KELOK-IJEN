@@ -49,9 +49,10 @@ html, body {
 
 /* ====== Peta ====== */
 #map {
-  height: calc(100vh - 60px);
+  height: calc(100vh - 110px);
   width: 100%;
-  margin-top: 60px;
+  position: relative;
+  top: 60px;
 }
 
 /* ===== Panel Transparan ===== */
@@ -98,12 +99,10 @@ html, body {
   border-collapse: collapse;
   width: 100%;
 }
-
 .popup-table td {
   border-bottom: 1px solid #ddd;
   padding: 4px 6px;
 }
-
 .popup-label {
   font-weight: 600;
   color: #1b4332;
