@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ====== Navbar ====== */
+.navbar {
+  background-color: #064635;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1200;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.nav-logo {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 35px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffd166;
+}
+
+/* ====== Peta ====== */
+#map {
+  height: calc(100vh - 60px);
+  width: 100%;
+  margin-top: 60px;
+}
+
+/* ===== Panel Transparan ===== */
+#layer-panel {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 15px 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  width: 200px;
+}
+
+#layer-panel h3 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #1b4332;
+  text-align: center;
+}
+
+.layer-group label {
+  display: block;
+  margin-left: 5px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+#layer-panel input[type="checkbox"] {
+  transform: scale(1.1);
+  margin-right: 6px;
+}
+
+/* ===== Popup Styling ===== */
+.leaflet-popup-content {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+}
+
+.popup-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.popup-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 4px 6px;
+}
+
+.popup-label {
+  font-weight: 600;
+  color: #1b4332;
+  width: 100px;
+}
+
+/* ===== Responsif ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}

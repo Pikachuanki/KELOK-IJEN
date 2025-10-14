@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peta Jalur Evakuasi Gunung Ijen</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- CSS eksternal -->
+  <link rel="stylesheet" href="../css/J_evakuasi.css">
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar">
+    <div class="nav-logo">Kelok Ijen</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../About/profil.html">Profil</a></li>
+      <li><a href="../About/peta.html" class="active">Peta</a></li>
+      <li><a href="../About/berita.html">Berita</a></li>
+      <li><a href="../About/arsip.html">Arsip</a></li>
+      <li><a href="../About/login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Peta ===== -->
+  <div id="map"></div>
+
+  <!-- ===== Panel Layer ===== -->
+  <div id="layer-panel" class="glass">
+    <h3>Layer Peta</h3>
+    <div class="layer-group">
+      <label><input type="checkbox" id="evakuasi" checked> Jalur Evakuasi</label>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Script eksternal -->
+  <script src="../js/J_evakuasi.js"></script>
+
+</body>
+</html>

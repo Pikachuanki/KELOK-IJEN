@@ -32,8 +32,8 @@
   <!-- Sidebar -->
   <div id="sidebar">
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Cari daerah...">
-      <button onclick="alert('Fitur pencarian nanti dihubungkan ke map')">🔍</button>
+       <input type="text" id="search" placeholder="Cari daerah..." />
+         <button id="btn">🔍</button>
     </div>
 
     <div class="section">
@@ -53,6 +53,12 @@
 
   <!-- Map -->
   <div id="map"></div>
+
+  <!-- Kotak Pencarian -->
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Cari daerah..." />
+    <button id="btn">🔍</button>
+  </div>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>

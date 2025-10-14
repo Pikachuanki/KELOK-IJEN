@@ -11,6 +11,46 @@ var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
   { attribution: '© OpenStreetMap contributors' }
 );
 
+var polygonLayer;
+
+// Fungsi pencarian wilayah
+document.getElementById("btn").addEventListener("click", async () => {
+  var query = document.getElementById("search").value.trim();
+  if (!query) return alert("Masukkan nama daerah dulu!");
+
+  const url = `https://nominatim.openstreetmap.org/search?format=json&polygon_geojson=1&q=${encodeURIComponent(query)}`;
+
+  try {
+    const res = await fetch(url, { headers: { 'Accept-Language': 'id' } });
+    const data = await res.json();
+
+    if (data.length === 0) {
+      alert("Wilayah tidak ditemukan.");
+      return;
+    }
+
+    const place = data[0];
+
+    // Hapus polygon lama kalau ada
+    if (polygonLayer) map.removeLayer(polygonLayer);
+
+    // Kalau ada polygon
+    if (place.geojson && place.geojson.type) {
+      polygonLayer = L.geoJSON(place.geojson, {
+        color: "red",
+        weight: 2
+      }).addTo(map);
+      map.fitBounds(polygonLayer.getBounds());
+    } else {
+      map.setView([place.lat, place.lon], 12);
+      alert("Wilayah ditemukan tapi tanpa batas polygon.");
+    }
+  } catch (err) {
+    console.error("Terjadi kesalahan:", err);
+    alert("Gagal mengambil data dari Nominatim.");
+  }
+});
+
 // Style
 function stylePersil(f) { return { color: "#cd9300ff", weight: 2, fillColor: "#ffc400ff", fillOpacity: 0.3 }; }
 function styleKRB(f) { return { color: "#FF0000", weight: 2, fillColor: "#FF0000", fillOpacity: 0.3 }; }
