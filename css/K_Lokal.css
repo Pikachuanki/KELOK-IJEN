@@ -28,12 +28,27 @@ html, body {
   font-weight: 600;
 }
 
+/* ===== Hamburger ===== */
+.hamburger {
+  position: absolute;
+  right: 50px;        
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.8rem;
+  cursor: pointer;
+  user-select: none;
+  color: #fff;
+  display: none; /* sembunyikan di layar besar */
+}
+
+/* ===== Nav Links ===== */
 .nav-links {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
-  margin-right: 80px; /* geser menu kanan sedikit ke kiri */
+  margin-right: 80px;
+  transition: all 0.3s ease;
 }
 
 .nav-links li {
@@ -45,6 +60,10 @@ html, body {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: #a3d9a5;
 }
 
 /* ====== Peta ====== */
@@ -109,9 +128,41 @@ html, body {
   width: 100px;
 }
 
-/* ===== Responsif ===== */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+    padding: 12px 20px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
   .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #064635;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
     display: none;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }

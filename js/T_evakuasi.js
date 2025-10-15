@@ -13,7 +13,7 @@ var satellite = L.tileLayer(
 // WARNA DAN STYLE TEMPAT EVAKUASI
 // ===============================
 function getColorEvakuasi(nama) {
-  const colors = ['#ffd166', '#06d6a0', '#118ab2', '#ef476f', '#073b4c'];
+  const colors = ['#06d6a0'];
   let index = Math.abs(nama?.charCodeAt(0) || 0) % colors.length;
   return colors[index];
 }
