@@ -13,7 +13,7 @@ var satellite = L.tileLayer(
 // WARNA POLIGON PERSIL
 // ===============================
 function getColorPersil(namaDesa) {
-  const colors = ['#ffd166', '#06d6a0', '#118ab2', '#ef476f', '#073b4c'];
+  const colors = ['#ffd166'];
   let index = Math.abs(namaDesa?.charCodeAt(0) || 0) % colors.length;
   return colors[index];
 }
@@ -21,7 +21,7 @@ function getColorPersil(namaDesa) {
 function stylePersil(feature) {
   return {
     fillColor: getColorPersil(feature.properties.NAMOBJ),
-    color: '#333',
+    color: '#ec7b19ff',
     weight: 1,
     fillOpacity: 0.6
   };

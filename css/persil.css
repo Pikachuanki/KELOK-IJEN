@@ -7,14 +7,14 @@ html, body {
   font-family: "Poppins", sans-serif;
 }
 
-/* ====== Navbar ====== */
+/* ===== Navbar ===== */
 .navbar {
   background-color: #064635;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 60px 12px 60px; /* kiri-kanan seimbang */
+  padding: 12px 60px;
   position: fixed;
   top: 0;
   left: 0;
@@ -28,12 +28,14 @@ html, body {
   font-weight: 600;
 }
 
+/* ===== Nav Links ===== */
 .nav-links {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
-  margin-right: 80px; /* geser menu kanan sedikit ke kiri */
+  margin-right: 80px;
+  transition: all 0.3s ease;
 }
 
 .nav-links li {
@@ -46,10 +48,23 @@ html, body {
   font-weight: 500;
   transition: color 0.3s;
 }
+.nav-links a:hover,
+.nav-links a.active {
+  color: #a3d9a5;
+}
 
-/* ====== Peta ====== */
+/* ===== Hamburger (hidden by default) ===== */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  user-select: none;
+  color: #fff;
+}
+
+/* ===== Peta ===== */
 #map {
-  height: calc(100vh - 110px);
+  height: calc(100vh - 60px);
   width: 100%;
   position: relative;
   top: 60px;
@@ -64,7 +79,7 @@ html, body {
   backdrop-filter: blur(10px);
   padding: 15px 18px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(255, 135, 14, 0.2);
   z-index: 1000;
   width: 200px;
 }
@@ -109,9 +124,45 @@ html, body {
   width: 100px;
 }
 
-/* ===== Responsif ===== */
+/* ===== Responsive Navbar ===== */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
   .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #064635;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
     display: none;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Tombol hamburger animasi */
+  .hamburger.open::before {
+    content: "✕";
   }
 }

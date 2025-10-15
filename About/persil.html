@@ -16,7 +16,11 @@
   <!-- ===== Navbar ===== -->
   <nav class="navbar">
     <div class="nav-logo">Kelok Ijen</div>
-    <ul class="nav-links">
+
+    <!-- Tombol hamburger -->
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <ul class="nav-links" id="navLinks">
       <li><a href="../index.html">Home</a></li>
       <li><a href="../About/profil.html">Profil</a></li>
       <li><a href="../About/peta.html" class="active">Peta</a></li>
@@ -42,6 +46,17 @@
 
   <!-- Script eksternal -->
   <script src="../js/persil.js"></script>
+
+  <!-- Toggle menu JS -->
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("open");
+    });
+  </script>
 
 </body>
 </html>
