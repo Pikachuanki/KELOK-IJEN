@@ -8,11 +8,23 @@ body { font-family: Arial, sans-serif; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed; top: 0; left: 0;
-  width: 100%; z-index: 1100;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1100;
 }
 .logo h2 { font-size: 1.5rem; color: white; }
-.navbar { flex: 1; display: flex; justify-content: center; }
+
+/* Hamburger */
+.hamburger {
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* Navbar */
+.navbar { flex: 1; display: flex; justify-content: center; transition: all 0.3s ease; }
 .navbar ul { list-style: none; display: flex; gap: 20px; }
 .navbar ul li a {
   text-decoration: none; color: white; font-weight: bold;
@@ -20,43 +32,120 @@ body { font-family: Arial, sans-serif; }
 }
 .navbar ul li a:hover { color: #a3d9a5; }
 
-/* Map */
+/* MAP */
 #map { height: 100vh; width: 100%; }
 
-/* Sidebar */
-#sidebar {
-  position: absolute; top: 80px; right: 10px;
-  width: 260px; max-height: 85vh; overflow-y: auto;
-  background: white; padding: 10px; border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  z-index: 1000; font-family: sans-serif; font-size: 14px; color: black;
+/* Tombol Toggle Sidebar (tetap di atas kanan layar) */
+.toggle-sidebar-fixed {
+  position: fixed;
+  top: 85px;
+  right: 10px;
+  z-index: 1200;
+  background: #064635;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
 }
+.toggle-sidebar-fixed:hover {
+  background: #0b7a57;
+}
+
+/* SIDEBAR */
+#sidebar {
+  position: fixed;
+  top: 130px;
+  right: 10px;
+  width: 260px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  z-index: 1100;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: black;
+  transition: transform 0.3s ease;
+}
+
+/* Sidebar tersembunyi */
+#sidebar:not(.active) {
+  transform: translateX(280px);
+}
+
+/* Konten sidebar */
 #sidebar h3 { margin: 0 0 8px 0; font-size: 16px; }
 #sidebar label { display: block; margin: 5px 0; }
-#sidebar .section { margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid #ddd; }
+#sidebar .section {
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ddd;
+}
 
 .search-box { display: flex; margin-bottom: 12px; }
 .search-box input {
-  flex: 1; padding: 6px 8px; border: 1px solid #ccc;
-  border-radius: 4px 0 0 4px; outline: none;
+  flex: 1; padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
 }
 .search-box button {
-  padding: 6px 10px; border: none; border-radius: 0 4px 4px 0;
-  background: #064635; color: white; cursor: pointer; transition: background 0.3s;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  background: #064635;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 .search-box button:hover { background: #0b7a57; }
 
+/* Popup styles */
 table.popup-table { border-collapse: collapse; font-size: 13px; width: 100%; }
 table.popup-table td {
   border: 1px solid #ccc; padding: 3px 6px;
   vertical-align: top; text-align: left;
 }
-
 .popup-img { margin-bottom: 6px; max-width: 220px; border-radius: 4px; }
-
 .popup-title {
   font-size: 16px; font-weight: bold; margin-bottom: 6px; color: #333;
 }
 .popup-label {
   font-size: 14px; font-weight: normal; color: #333; width: 70px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+
+  .navbar {
+    position: absolute;
+    top: 60px; left: 0;
+    width: 100%;
+    background: #064635;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+  .navbar.active { display: flex; }
+  .navbar ul { flex-direction: column; gap: 10px; padding: 10px 0; }
+  .navbar ul li a { font-size: 1rem; }
+
+  /* Sidebar dan tombol di layar kecil */
+  .toggle-sidebar-fixed {
+    top: 120px;
+    right: 15px;
+  }
+
+  #sidebar {
+    top: 160px;
+    right: 0;
+    width: 85%;
+    max-width: 300px;
+  }
 }
